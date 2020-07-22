@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Evan Vaughan",
+    "classifications": [ "Microservice", "C#" ],
+    "identity": "Test Microservice Template",
+    "name": "Test Microservice Project",
+    "shortName": "microservice",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "exclude": [
+                        "**/.git/**"
+                    ]
+                }
+            ]
+        }
+    ],
+    "sourceName": "Template",
+    "preferNameDirectory": true
+  }

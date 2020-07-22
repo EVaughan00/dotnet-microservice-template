@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wK4Gz83KTuzZchYPY6GvyZMqb9qVHbwN1Kask4p8ECwPEP9Ran3hrV1fwhAVwkGl6pK+kPJd9WvE6xusBQxYug==",
+  "success": true,
+  "projectFilePath": "/home/evaughan/Documents/Projects/Templates/microservice/BuildingBlocks/SeedWork/SeedWork.csproj",
+  "expectedPackageFiles": [
+    "/home/evaughan/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/evaughan/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

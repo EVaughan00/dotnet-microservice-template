@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+X1EGZE3Tp9aY2212wi5CeXSzVw/84UnB6YNE9XJGT/zNB3OkgNg0GHzcMDPI5QDUWuKtEcyhciOgIaJuq7Uig==",
+  "dgSpecHash": "yIpIoaB7j99AKwtljDgoe6f2zRvyj82EoW1xSrY+7ugBvxVwXLPGLYQ2vISWp6aQZ8ImwsDc/KLZ+FfjmUh0nA==",
   "success": true,
   "projectFilePath": "/home/evaughan/Documents/Projects/Templates/microservice/Template.Infrastructure/Template.Infrastructure.csproj",
   "expectedPackageFiles": [

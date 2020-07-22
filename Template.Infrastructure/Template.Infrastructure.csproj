@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../Template.Domain/Template.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

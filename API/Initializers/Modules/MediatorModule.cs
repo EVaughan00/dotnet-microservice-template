@@ -2,6 +2,7 @@ using Autofac;
 using MediatR;
 using System.Reflection;
 using Template.API.Commands;
+using Template.API.Queries;
 using BuildingBlocks.Common;
 
 namespace Template.API.Initializers
@@ -17,6 +18,12 @@ namespace Template.API.Initializers
                 .AsClosedTypesOf(typeof(IRequest<>));
 
             builder.RegisterAssemblyTypes(typeof(ReferenceCommandHandler).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(ReferenceQuery).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(IRequest<>));
+
+            builder.RegisterAssemblyTypes(typeof(ReferenceQueryHandler).GetTypeInfo().Assembly)
                 .AsClosedTypesOf(typeof(IRequestHandler<,>));
 
             builder.Register<ServiceFactory>(context => {

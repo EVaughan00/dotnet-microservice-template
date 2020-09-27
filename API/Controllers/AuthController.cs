@@ -4,26 +4,28 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 using Template.API.Commands;
+using Template.API.Queries;
 using Template.Domain;
+using System.Collections.Generic;
 
 namespace Template.API.Controllers
 {
-    [Route("/api")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class TemplateController : ControllerBase
     {
 
         private readonly IMediator _mediator;
-        private readonly ILogger<AuthController> _logger;
+        private readonly ILogger<TemplateController> _logger;
 
-        public AuthController(IMediator mediator, ILogger<AuthController> logger)
+        public TemplateController(IMediator mediator, ILogger<TemplateController> logger)
         {
             this._logger = logger;
             this._mediator = mediator;
         }
 
-        [HttpPost("/api/auth/register")]
-        public async Task<IActionResult> Register(AuthenticateUserCommand command)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(CreateTemplateAggregateCommand command)
         {
             try {
                 await _mediator.Send(command);
@@ -34,11 +36,11 @@ namespace Template.API.Controllers
             };
         }
 
-        [HttpPost("/api/auth/login")]
-        public async Task<ActionResult<User>> Login(LoginCommand command)
+        [HttpGet("templates")]
+        public async Task<ActionResult<List<TemplateEntity>>> Get(GetTemplateAggregateQuery query)
         {
             try {
-                var result = await _mediator.Send(command);
+                var result = await _mediator.Send(query);
 
                 return Ok(result);
             } catch (Exception e) {

@@ -1,4 +1,4 @@
-﻿using Identity.API.Initializers;
+﻿using Template.API.Initializers;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -9,7 +9,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identity.API.Utils {
+namespace Template.API.Utils {
     public class JwtGenerator {
 
         private IOptions<AudienceModel> _settings;

@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
-namespace Identity.API
+namespace Template.API
  {
     public class Program {
         public static void Main(string[] args) {

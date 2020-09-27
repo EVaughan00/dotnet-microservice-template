@@ -1,6 +1,6 @@
 using BuildingBlocks.Common;
 
-namespace Identity.API.Commands
+namespace Template.API.Commands
 {
     public class AuthenticateUserCommand : Command<bool>
     {

@@ -1,7 +1,7 @@
 using BuildingBlocks.Common;
-using Identity.Domain;
+using Template.Domain;
 
-namespace Identity.API.Commands
+namespace Template.API.Commands
 {
     public class LoginCommand : Command<SignInResponseDTO>
     {

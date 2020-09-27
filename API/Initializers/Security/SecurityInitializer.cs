@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
     public class SecurityInitializer : IInitializer {
         public void InitializeServices(IServiceCollection services, IConfiguration configuration) {

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
     public class SwaggerUIInitializer : IInitializer {
         public void InitializeServices(IServiceCollection services, IConfiguration configuration) {

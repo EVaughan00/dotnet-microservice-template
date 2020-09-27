@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
     public class AudienceModel {
         public string Secret { get; set; }

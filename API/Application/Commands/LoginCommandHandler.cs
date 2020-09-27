@@ -2,10 +2,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using BuildingBlocks.Common;
-using Identity.API.Utils;
-using Identity.Domain;
+using Template.API.Utils;
+using Template.Domain;
 
-namespace Identity.API.Commands
+namespace Template.API.Commands
 {
     public class LoginCommandHandler : CommandHandler<LoginCommand, SignInResponseDTO>
     {

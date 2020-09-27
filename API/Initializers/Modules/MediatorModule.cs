@@ -1,10 +1,10 @@
 using Autofac;
 using MediatR;
 using System.Reflection;
-using Identity.API.Commands;
+using Template.API.Commands;
 using BuildingBlocks.Common;
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
     public class MediatorModule : Autofac.Module
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Identity.API {
+namespace Template.API {
     public class SignInResponseDTO {
 
         public string uuid {get; set; }

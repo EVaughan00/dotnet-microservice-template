@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
     public static class Initializer {
         public static void InitializeAll(this IServiceCollection services, IConfiguration configuration) {

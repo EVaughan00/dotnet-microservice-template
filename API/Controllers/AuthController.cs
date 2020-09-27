@@ -3,10 +3,10 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
-using Identity.API.Commands;
-using Identity.Domain;
+using Template.API.Commands;
+using Template.Domain;
 
-namespace Identity.API.Controllers
+namespace Template.API.Controllers
 {
     [Route("/api")]
     [ApiController]

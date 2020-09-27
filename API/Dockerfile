@@ -5,16 +5,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["Services/Identity/API/API.csproj", "Services/Identity/API/"]
+COPY ["Services/Template/API/API.csproj", "Services/Template/API/"]
 COPY ["BuildingBlocks/SeedWork/SeedWork.csproj", "BuildingBlocks/SeedWork/"]
 COPY ["BuildingBlocks/Utils/Utils.csproj", "BuildingBlocks/Utils/"]
 COPY ["BuildingBlocks/Common/Common.csproj", "BuildingBlocks/Common/"]
-COPY ["Services/Identity/Domain/Domain.csproj", "Services/Identity/Domain/"]
-COPY ["Services/Identity/Infrastructure/Infrastructure.csproj", "Services/Identity/Infrastructure/"]
+COPY ["Services/Template/Domain/Domain.csproj", "Services/Template/Domain/"]
+COPY ["Services/Template/Infrastructure/Infrastructure.csproj", "Services/Template/Infrastructure/"]
 COPY ["Config/Config.csproj", "Config/"]
-RUN dotnet restore "Services/Identity/API/"
+RUN dotnet restore "Services/Template/API/"
 COPY . .
-WORKDIR "/src/Services/Identity/API"
+WORKDIR "/src/Services/Template/API"
 RUN dotnet build "API.csproj" -c Release -o /app
 
 FROM build AS publish

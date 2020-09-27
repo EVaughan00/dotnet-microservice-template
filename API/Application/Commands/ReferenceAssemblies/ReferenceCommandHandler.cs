@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BuildingBlocks.Common;
 
-namespace Identity.API.Commands
+namespace Template.API.Commands
 {
     public class ReferenceCommandHandler : CommandHandler<ReferenceCommand, bool>
     {

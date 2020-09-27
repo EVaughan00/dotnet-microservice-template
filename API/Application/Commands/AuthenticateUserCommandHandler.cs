@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using BuildingBlocks.Common;
 
-namespace Identity.API.Commands
+namespace Template.API.Commands
 {
     public class AuthenticateUserCommandHandler : CommandHandler<AuthenticateUserCommand, bool>
     {

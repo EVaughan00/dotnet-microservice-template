@@ -1,6 +1,6 @@
 using BuildingBlocks.SeedWork;
 
-namespace Identity.Domain
+namespace Template.Domain
 {
     public class User : IAggregateRoot
     {

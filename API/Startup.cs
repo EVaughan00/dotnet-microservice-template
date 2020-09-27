@@ -12,10 +12,10 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using System.IO;
 using System;
-using Identity.API.Initializers;
+using Template.API.Initializers;
 
 
-namespace Identity.API 
+namespace Template.API 
 {
 
     public class Startup {

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Identity.API.Commands;
-using Identity.API.Utils;
+using Template.API.Commands;
+using Template.API.Utils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace Identity.API.Initializers
+namespace Template.API.Initializers
 {
 
     /**

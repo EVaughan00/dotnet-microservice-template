@@ -6,7 +6,7 @@ using Template.API.Commands;
 using Template.API.Utils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using BuildingBlocks.SeedWork;
 
 namespace Template.API.Initializers
 {
@@ -19,6 +19,7 @@ namespace Template.API.Initializers
         public void InitializeServices(IServiceCollection services, IConfiguration configuration) {
 
             services.AddTransient<JwtGenerator>();
+            services.AddTransient<IDatabaseContext, MongoDbContext>();
 
         }
     }

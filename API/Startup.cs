@@ -5,9 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BuildingBlocks.Utils.Exceptions;
-using BuildingBlocks.Common ;
-using Application.Config;
-using MediatR;
+using BuildingBlocks.SeedWork;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using System.IO;
@@ -31,10 +29,11 @@ namespace Template.API
 
             services.InitializeAll(Configuration);
             services.AddLogging(logging => logging.AddConsole());
-    
+
             var container = new ContainerBuilder();
             
             container.Populate(services);
+            container.RegisterModule(new RepositoryModule());
             container.RegisterModule(new MediatorModule());
 
             return new AutofacServiceProvider(container.Build());

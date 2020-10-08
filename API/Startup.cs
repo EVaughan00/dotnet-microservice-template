@@ -5,13 +5,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BuildingBlocks.Utils.Exceptions;
-using BuildingBlocks.SeedWork;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using System.IO;
 using System;
 using Template.API.Initializers;
-
+using Application.Config;
 
 namespace Template.API 
 {
@@ -29,6 +28,7 @@ namespace Template.API
 
             services.InitializeAll(Configuration);
             services.AddLogging(logging => logging.AddConsole());
+            services.Configure<MongoDBSettings>(Configuration.GetSection("MongoDB"));            
 
             var container = new ContainerBuilder();
             

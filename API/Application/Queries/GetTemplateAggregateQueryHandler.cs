@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using BuildingBlocks.Common;
-using Template.API.Utils;
+using Template.Infrastructure;
 using Template.Domain;
 using Template.API.DTO;
 using System.Collections.Generic;
@@ -13,25 +13,26 @@ namespace Template.API.Queries
     {
 
         private readonly ILogger<GetTemplateAggregateQueryHandler> _logger;
-        private readonly JwtGenerator _jwtGenerator;
+        private readonly ITemplateEntityRepository _entities;
 
-        public GetTemplateAggregateQueryHandler(ILogger<GetTemplateAggregateQueryHandler> logger, JwtGenerator jwtGenerator)
+        public GetTemplateAggregateQueryHandler(ILogger<GetTemplateAggregateQueryHandler> logger, ITemplateEntityRepository entities)
         {
-            _jwtGenerator = jwtGenerator;
+            _entities = entities;
             _logger = logger;
         }
 
         public override async Task<List<TemplateAggregateResponseDTO>> Handle(GetTemplateAggregateQuery query, CancellationToken token)
         {
-            var entities = new List<TemplateAggregateResponseDTO>(); 
+            var entitiesDTO = new List<TemplateAggregateResponseDTO>();
             
-            entities.Add(new TemplateAggregateResponseDTO(){ templateID = "Template1" });
+            foreach (TemplateEntity entity in _entities.GetAll())
+                entitiesDTO.Add(new TemplateAggregateResponseDTO(){templateID = entity.TemplateID});
+        
+            _logger.LogInformation("Getting entities from database");
 
-            _logger.LogInformation("Getting entities");
+            await Task.CompletedTask;
 
-            await Task.CompletedTask;          
-
-            return entities;
+            return entitiesDTO;
 
         }
     }

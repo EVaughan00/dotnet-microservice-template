@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Config\Config.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\BuildingBlocks\SeedWork\SeedWork.csproj" />
     <ProjectReference Include="..\BuildingBlocks\Common\Common.csproj" />

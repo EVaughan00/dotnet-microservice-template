@@ -10,6 +10,6 @@ dotnet new microservice -n Identity
 
 This will change all "Template" tags in the microservice to "Identity".
 
-This template is best used with the application-boilerplate structure. The boilerplate will contain 
+This template is best used with the application-boilerplate structure. The boilerplate contains
 all dependency paths as well as an API Gateway for microservices placed in the 'Services' directory.
-Docker-compose is used to spin up, microservices, and databases, and the API Gateway.
+Docker-compose is used to spin up, microservices, databases, and the API Gateway.

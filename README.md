@@ -2,7 +2,7 @@
 
 ## Structure 
 
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fhackernoon.com%2Fclean-domain-driven-design-in-10-minutes-6037a59c8b7b&psig=AOvVaw37wMZEH3_msXHE9Lmv0gVI&ust=1602427350067000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKCSoKGhquwCFQAAAAAdAAAAABAV
+https://hackernoon.com/hn-images/1*YVxaXqiIYskqPauNKZ2OSA.png
 
 ## Usage
 

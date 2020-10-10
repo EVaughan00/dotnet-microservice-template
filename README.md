@@ -2,7 +2,9 @@
 
 ## Structure 
 
-https://hackernoon.com/hn-images/1*YVxaXqiIYskqPauNKZ2OSA.png
+![microservice structure](https://hackernoon.com/hn-images/1*YVxaXqiIYskqPauNKZ2OSA.png)
+
+The structure features a bare bones clean architecture with CQRS, MediatR, custom database contexts, and a RabbitMQ event bus. 
 
 ## Usage
 

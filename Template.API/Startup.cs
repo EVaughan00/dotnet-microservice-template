@@ -28,7 +28,7 @@ namespace Template.API
 
             services.InitializeAll(Configuration);
             services.AddLogging(logging => logging.AddConsole());
-            services.Configure<MongoDBSettings>(Configuration.GetSection("MongoDB"));            
+            services.Configure<MongoDBSettings>(Configuration.GetSection("MongoDB"));
 
             var container = new ContainerBuilder();
             

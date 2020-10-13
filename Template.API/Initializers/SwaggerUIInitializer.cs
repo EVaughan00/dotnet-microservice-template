@@ -9,12 +9,12 @@ namespace Template.API.Initializers
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo {
                     Version = "v1",
-                    Title = "Auth Resource",
-                    Description = "API Documentation",
+                    Title = "Template Resource",
+                    Description = "Template API Documentation",
                     Contact = new OpenApiContact() {
-                        Name = "Sebastian Dudas",
-                        Email = "seba.med@yahoo.com",
-                        Url = new System.Uri("https://github.com/sebamed")
+                        Name = "Evan Vaughan",
+                        Email = "evm.vaughan@gmail.com",
+                        Url = new System.Uri("https://github.com/evaughan00")
                     },
                     License = new OpenApiLicense {
                         Name = "MIT",

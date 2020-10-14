@@ -7,6 +7,7 @@ using Template.API.Commands;
 using Template.API.Queries;
 using Template.Domain;
 using System.Collections.Generic;
+using Orders.API.DTO;
 
 namespace Template.API.Controllers
 {
@@ -37,10 +38,10 @@ namespace Template.API.Controllers
         }
 
         [HttpGet("templates")]
-        public async Task<ActionResult<List<TemplateEntity>>> Get(GetTemplateAggregateQuery query)
+        public async Task<ActionResult<List<TemplateAggregateResponseDTO>>> GetAll()
         {
             try {
-                var result = await _mediator.Send(query);
+                var result = await _mediator.Send(new GetTemplateAggregateQuery());
 
                 return Ok(result);
             } catch (Exception e) {

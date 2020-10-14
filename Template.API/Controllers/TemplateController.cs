@@ -7,7 +7,7 @@ using Template.API.Commands;
 using Template.API.Queries;
 using Template.Domain;
 using System.Collections.Generic;
-using Orders.API.DTO;
+using Template.API.DTO;
 
 namespace Template.API.Controllers
 {

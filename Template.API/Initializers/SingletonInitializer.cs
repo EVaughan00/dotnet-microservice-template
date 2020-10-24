@@ -3,6 +3,9 @@ using Template.API.Utils;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using BuildingBlocks.SeedWork;
+using BuildingBlocks.Common.Events;
+using Template.Domain.Events;
+using Template.Api.EventHandlers;
 
 namespace Template.API.Initializers
 {
@@ -16,6 +19,10 @@ namespace Template.API.Initializers
 
             services.AddTransient<JwtGenerator>();
             services.AddTransient<IDatabaseContext, MongoDbContext>();
+
+            // Events and event handlers
+            services.AddTransient<TemplateCreatedEventHandler>();
+            services.AddTransient<IEventHandler<TemplateCreatedEvent>, TemplateCreatedEventHandler>();
 
         }
     }

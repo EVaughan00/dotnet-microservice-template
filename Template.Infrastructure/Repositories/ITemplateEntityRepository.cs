@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using BuildingBlocks.SeedWork;
-using Template.Domain;
+using Template.Domain.Aggregates;
 
 namespace Template.Infrastructure
 {

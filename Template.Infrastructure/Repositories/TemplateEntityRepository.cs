@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-using Template.Domain;
+using Template.Domain.Aggregates;
 using BuildingBlocks.SeedWork;
 using MongoDB.Bson;
 using System.Collections.Generic;

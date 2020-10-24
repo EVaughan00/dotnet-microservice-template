@@ -11,10 +11,13 @@ using System.IO;
 using System;
 using Template.API.Initializers;
 using Application.Config;
+using Template.Api.EventHandlers;
+using BuildingBlocks.Common.Events;
+using Template.Domain.Events;
+using BuildingBlocks.Common.Events.Bus;
 
 namespace Template.API 
 {
-
     public class Startup {
 
         public IConfiguration Configuration { get; }
@@ -35,6 +38,7 @@ namespace Template.API
             container.Populate(services);
             container.RegisterModule(new RepositoryModule());
             container.RegisterModule(new MediatorModule());
+            container.RegisterModule(new EventBusModule());
 
             return new AutofacServiceProvider(container.Build());
         }
@@ -68,6 +72,15 @@ namespace Template.API
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
             });
+
+            ConfigureEventBus(app);
+        }
+
+        
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<TemplateCreatedEvent, TemplateCreatedEventHandler>();
         }
     }
 }

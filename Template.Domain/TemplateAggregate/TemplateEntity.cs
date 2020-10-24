@@ -2,7 +2,7 @@ using BuildingBlocks.SeedWork;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Template.Domain
+namespace Template.Domain.Aggregates
 {
     public class TemplateEntity : Entity, IAggregateRoot
     {

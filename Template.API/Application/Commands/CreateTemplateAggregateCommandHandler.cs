@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using BuildingBlocks.Common;
 using Template.Infrastructure;
-using Template.Domain;
+using Template.Domain.Aggregates;
 
 namespace Template.API.Commands
 {

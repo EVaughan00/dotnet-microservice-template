@@ -1,7 +1,7 @@
 using Autofac;
 using BuildingBlocks.Common.Events.Bus;
 
-namespace Profile.API.Initializers
+namespace Template.API.Initializers
 {
     public class EventBusModule : Autofac.Module 
     {

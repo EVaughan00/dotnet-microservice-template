@@ -13,7 +13,7 @@ using Template.API.Initializers;
 using Application.Config;
 using Template.Api.EventHandlers;
 using BuildingBlocks.Common.Events;
-using Template.Domain.Events;
+using Template.Infrastructure.IntegrationEvents;
 using BuildingBlocks.Common.Events.Bus;
 
 namespace Template.API 
@@ -80,7 +80,7 @@ namespace Template.API
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            eventBus.Subscribe<TemplateCreatedEvent, TemplateCreatedEventHandler>();
+            eventBus.Subscribe<TemplateCreatedIntegrationEvent, TemplateCreatedIntegrationEventHandler>();
         }
     }
 }

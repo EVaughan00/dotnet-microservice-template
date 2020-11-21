@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Template.Domain.Events
+namespace Template.Infrastructure.IntegrationEvents
 {
-    public class TemplateCreatedEvent : Event
+    public class TemplateCreatedIntegrationEvent : Event
     {
         public string TemplateID{ get; private set; }
 
-        public TemplateCreatedEvent(string templateID)
+        public TemplateCreatedIntegrationEvent(string templateID)
         {
             TemplateID = templateID;
         }

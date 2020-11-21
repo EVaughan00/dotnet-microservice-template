@@ -9,7 +9,6 @@ namespace Template.Infrastructure
         void Create(TemplateEntity TemplateEntity);
         List<TemplateEntity> GetAll();
         TemplateEntity GetById(string id);
-        // void Update(TemplateEntity TemplateEntity);
-        // void Delete(string email);        
+        void Update(TemplateEntity TemplateEntity);
     }    
 }

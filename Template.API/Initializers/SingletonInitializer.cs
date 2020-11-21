@@ -6,6 +6,7 @@ using BuildingBlocks.SeedWork;
 using BuildingBlocks.Common.Events;
 using Template.Domain.Events;
 using Template.Api.EventHandlers;
+using Template.Infrastructure.IntegrationEvents;
 
 namespace Template.API.Initializers
 {
@@ -21,8 +22,8 @@ namespace Template.API.Initializers
             services.AddTransient<IDatabaseContext, MongoDbContext>();
 
             // Events and event handlers
-            services.AddTransient<TemplateCreatedEventHandler>();
-            services.AddTransient<IEventHandler<TemplateCreatedEvent>, TemplateCreatedEventHandler>();
+            services.AddTransient<TemplateCreatedIntegrationEventHandler>();
+            services.AddTransient<IEventHandler<TemplateCreatedIntegrationEvent>, TemplateCreatedIntegrationEventHandler>();
 
         }
     }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using BuildingBlocks.Common;
 using Template.Infrastructure;
 using Template.Domain.Aggregates;
+using Template.Domain.Events;
 
 namespace Template.API.Commands
 {
@@ -11,11 +12,11 @@ namespace Template.API.Commands
     {
 
         private readonly ILogger<CreateTemplateAggregateCommandHandler> _logger;
-        private readonly ITemplateEntityRepository _entities;
+        private readonly ITemplateEntityRepository _templates;
 
         public CreateTemplateAggregateCommandHandler(ILogger<CreateTemplateAggregateCommandHandler> logger, ITemplateEntityRepository entities)
         {
-            _entities = entities;
+            _templates = entities;
             _logger = logger;
         }
 
@@ -23,9 +24,15 @@ namespace Template.API.Commands
         {
             _logger.LogInformation("Template aggregate created with name: " + command.templateID);
 
-            _entities.Create(new TemplateEntity(command.templateID));
+            _templates.Create(new TemplateEntity(command.templateID));
 
-            if (_entities.GetById(command.templateID) == null) _logger.LogInformation("Could not create template entity: " +command.templateID); 
+            if (_templates.GetById(command.templateID) == null) _logger.LogInformation("Could not create template entity: " + command.templateID); 
+
+            var template = _templates.GetById(command.templateID);
+
+            template.AddDomainEvent(new TestCreatedDomainEvent() { TemplateID = command.templateID });
+
+            _templates.Update(template);
 
             await Task.CompletedTask;
 

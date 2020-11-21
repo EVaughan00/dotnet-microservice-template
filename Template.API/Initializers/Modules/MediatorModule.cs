@@ -4,6 +4,7 @@ using System.Reflection;
 using Template.API.Commands;
 using Template.API.Queries;
 using BuildingBlocks.Common;
+using Template.API.Application.DomainEventHandlers;
 
 namespace Template.API.Initializers
 {
@@ -25,6 +26,9 @@ namespace Template.API.Initializers
 
             builder.RegisterAssemblyTypes(typeof(ReferenceQueryHandler).GetTypeInfo().Assembly)
                 .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(ReferenceDomainEventHandler).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(INotificationHandler<>));
 
             builder.Register<ServiceFactory>(context => {
                 var componentContext = context.Resolve<IComponentContext>();

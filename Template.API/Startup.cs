@@ -62,6 +62,9 @@ namespace Template.API
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
             // app.UseHttpsRedirection();
 
             app.UseSwagger();

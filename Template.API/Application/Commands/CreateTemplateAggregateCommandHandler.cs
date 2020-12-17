@@ -30,7 +30,7 @@ namespace Template.API.Commands
 
             var template = _templates.GetById(command.templateID);
 
-            template.AddDomainEvent(new TestCreatedDomainEvent() { TemplateID = command.templateID });
+            template.AddDomainEvent(new TemplateCreatedDomainEvent() { TemplateID = command.templateID });
 
             _templates.Update(template);
 
